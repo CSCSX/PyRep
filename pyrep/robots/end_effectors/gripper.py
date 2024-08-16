@@ -99,7 +99,7 @@ class Gripper(RobotComponent):
         joint_intervals = np.array(joint_intervals_list)
 
         # Decide on if we need to open or close
-        joint_range = joint_intervals[:, 1] - joint_intervals[:, 0]
+        joint_range = joint_intervals[:, 1]
         target_pos = joint_intervals[:, 0] + (joint_range * amount)
 
         current_positions = self.get_joint_positions()
